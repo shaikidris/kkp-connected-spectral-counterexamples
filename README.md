@@ -34,8 +34,9 @@ lake comparator --config comparator.json
 The package uses Lean 4.35.0-rc3 and locked Mathlib
 `dd56d02cb7a58fa066c4a2c7fddec3cbb59ae8df`. Its local development audit reports
 only `propext`, `Classical.choice`, and `Quot.sound`. The supported Comparator
-sandbox requires Linux; independent-kernel verification and the complete
-Palomar mechanical and rendering rehearsals have not run. The public source
+sandbox requires Linux. Commit-specific build, preparation, and independent-kernel
+verdicts are available in the GitHub Actions artifacts; a green wrapper alone is
+not proof evidence. The public source
 repository is <https://github.com/shaikidris/kkp-connected-spectral-counterexamples>.
 Its GitHub rehearsal runs the pinned Palomar preparation entry point and a
 sandboxed Linux Comparator with NanoDa and con-ron. This rehearsal is distinct
