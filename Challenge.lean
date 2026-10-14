@@ -41,29 +41,29 @@ def bridgeAdj (s : ℕ) : BridgeVertex s → BridgeVertex s → Prop
 /-- The literal simple graph in the counterexample family. -/
 def bridgeGraph (s : ℕ) : SimpleGraph (BridgeVertex s) where
   Adj := bridgeAdj s
-  symm := ⟨by intro v w; cases v <;> cases w <;> simp_all [bridgeAdj, ne_comm]⟩
-  loopless := ⟨by intro v; cases v <;> simp [bridgeAdj]⟩
-instance bridgeAdjDecidable (s : ℕ) : DecidableRel (bridgeGraph s).Adj := by
-  intro v w
-  cases v <;> cases w <;> simp only [bridgeGraph, bridgeAdj] <;> infer_instance
-/-- Symmetry of the forbidden graph's explicit adjacency relation. -/
-theorem forbiddenAdj_symmetric (i j : Fin 5) :
-    (i ≠ j ∧ ¬ (3 ≤ i.val ∧ 3 ≤ j.val)) →
-      (j ≠ i ∧ ¬ (3 ≤ j.val ∧ 3 ≤ i.val)) := by
-  simp [ne_comm, and_comm]
-/-- Irreflexivity of the forbidden graph's explicit adjacency relation. -/
-theorem forbiddenAdj_irreflexive (i : Fin 5) :
-    ¬ (i ≠ i ∧ ¬ (3 ≤ i.val ∧ 3 ≤ i.val)) := by
-  simp
+  symm := ⟨fun v w => match v, w with
+    | .inl (_, _), .inl (_, _) => fun h => Ne.symm h
+    | .inr _, .inr _ => fun h => Ne.symm h
+    | .inl (_, _), .inr _ => fun h => h
+    | .inr _, .inl (_, _) => fun h => h⟩
+  loopless := ⟨fun v => match v with
+    | .inl (_, _) => fun h => h rfl
+    | .inr _ => fun h => h rfl⟩
+instance bridgeAdjDecidable (s : ℕ) : DecidableRel (bridgeGraph s).Adj :=
+  fun v w => match v, w with
+    | .inl (i, _), .inl (j, _) => inferInstanceAs (Decidable (i ≠ j))
+    | .inr a, .inr b => inferInstanceAs (Decidable (a ≠ b))
+    | .inl (i, a), .inr b =>
+      inferInstanceAs (Decidable (i.val = 0 ∧ a.val = 0 ∧ b.val = 0))
+    | .inr b, .inl (i, a) =>
+      inferInstanceAs (Decidable (i.val = 0 ∧ a.val = 0 ∧ b.val = 0))
 /-- The complete graph on five vertices with only the edge `{3,4}` removed. -/
 def forbiddenGraph : SimpleGraph (Fin 5) where
   Adj i j := i ≠ j ∧ ¬ (3 ≤ i.val ∧ 3 ≤ j.val)
-  symm := ⟨forbiddenAdj_symmetric⟩
-  loopless := ⟨forbiddenAdj_irreflexive⟩
-instance forbiddenAdjDecidable : DecidableRel forbiddenGraph.Adj := by
-  intro i j
-  dsimp [forbiddenGraph]
-  infer_instance
+  symm := ⟨fun i j h => ⟨Ne.symm h.1, fun hji => h.2 ⟨hji.2, hji.1⟩⟩⟩
+  loopless := ⟨fun i h => h.1 rfl⟩
+instance forbiddenAdjDecidable : DecidableRel forbiddenGraph.Adj :=
+  fun i j => inferInstanceAs (Decidable (i ≠ j ∧ ¬ (3 ≤ i.val ∧ 3 ≤ j.val)))
 
 /-- Every graph in the stated range is a connected counterexample, including the exact positive
 gap certificate. Forbidden copies are injective edge-preserving maps, hence need not be induced. -/
