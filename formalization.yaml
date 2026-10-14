@@ -58,7 +58,7 @@ automation:
     AI-assisted proofs and packaging. Solution has no proof holes,
     native_decide, or custom axioms. Challenge has two deliberate Comparator holes.
 review:
-  status: Local native Lean validation; independent kernels and human expert review not performed.
+  status: Native Lean build and axiom audit; commit-specific mechanical evidence in GitHub Actions; human expert review not performed.
   reviewers: []
 fidelity:
   divergences: >-
