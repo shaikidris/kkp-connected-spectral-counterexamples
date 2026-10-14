@@ -1,0 +1,68 @@
+version: v0.4
+project:
+  name: Connected counterexamples to the exact color-critical two-eigenvalue bound
+  description: >-
+    For F=K5 minus one edge, a color-critical graph of chromatic number four,
+    the graph formed from K(s,s,s) and K4 by one bridge is connected and F-free
+    for every integer s at least three. It has 3s squared plus 7 edges, and
+    the squared sum of its two largest ordered adjacency eigenvalues exceeds
+    4m/3 by at least (656s squared-1366s+62)/(3(37s-1) squared)>0.
+    The family has arbitrarily large edge counts, refuting the exact assertion
+    in KKP Conjecture 1.16 and Li–Liu–Zhang Conjecture 5.4.
+  authors: [Idris Ali Shaik]
+  responsible_maintainers: [Idris Ali Shaik]
+  license: Apache-2.0
+sources:
+  - title: Connected bridge counterexample and two-vector compression certificate
+    type: other
+    relationship: formalizes
+    note: Supplied private research manuscript; exact proposition and certificate described in README.md.
+  - title: Localization of spectral Turán-type theorems
+    type: paper
+    id: arXiv:2512.01409v2
+    location: https://arxiv.org/html/2512.01409v2
+    relationship: background
+    note: Conjecture 1.16 and the connectedness convention in Section 1.1.
+  - title: Edge-spectral Turán theorems for color-critical graphs with applications
+    type: paper
+    id: arXiv:2511.15431v3
+    location: https://arxiv.org/html/2511.15431v3
+    relationship: background
+    note: Conjecture 5.4.
+  - title: The Bollobás–Nikiforov inequality for nonnegative edge weights
+    type: other
+    location: https://github.com/ShengtongZhang-alt/BN/tree/5f4741254398424b730c9a893220a51e1cd829c5
+    relationship: adapts
+    contributors:
+      - name: Shengtong Zhang
+        role: Author of the reused spectral definitions and variational Lean proof source.
+    note: >-
+      The authoritative substantive source for the reused BN spectral components is
+      ShengtongZhang-alt/BN at 5f4741254398424b730c9a893220a51e1cd829c5.
+      These source modules are ported to the selected toolchain with Apache-2.0 notices retained.
+classification:
+  arxiv: [math.CO]
+  msc2020: [05C50, 05C35]
+status:
+  scope: The full family certificate and arbitrarily large connected graph counterexamples.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+automation:
+  methods:
+    - method: agent
+      models: [GPT-6 Codex]
+      framework: Codex
+      tool_setup: Local Lean formalization, exact integer diagnostic replay, and axiom/dependency audits.
+  notes: >-
+    AI-assisted proofs and packaging. Solution has no proof holes,
+    native_decide, or custom axioms. Challenge has two deliberate Comparator holes.
+review:
+  status: Local native Lean validation; independent kernels and human expert review not performed.
+  reviewers: []
+fidelity:
+  divergences: >-
+    The compared statements are an explicit connected counterexample family
+    and its unbounded edge counts. The actual adjacency matrix and its ordered
+    eigenvalues are formalized. No claim about the strengthened asymptotic theorem
+    of Conjecture 1.17 is selected; a bounded positive excess is compatible with it.
