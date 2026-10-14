@@ -15,6 +15,9 @@ integer `s≥3`, at arbitrarily large edge counts.
 
 namespace BN
 variable {V : Type*} [Fintype V] [DecidableEq V]
+/-- Adjacency eigenvalues indexed by vertices, counting algebraic multiplicity. -/
+noncomputable def adjacencyEigenvalues (G : SimpleGraph V) [DecidableRel G.Adj] : V → ℝ :=
+  (G.isHermitian_adjMatrix ℝ).eigenvalues
 /-- Adjacency eigenvalues in nonincreasing order, with multiplicity. -/
 noncomputable def adjacencyEigenvalues₀ (G : SimpleGraph V) [DecidableRel G.Adj] :
     Fin (Fintype.card V) → ℝ := (G.isHermitian_adjMatrix ℝ).eigenvalues₀
