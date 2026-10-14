@@ -46,11 +46,20 @@ def bridgeGraph (s : ℕ) : SimpleGraph (BridgeVertex s) where
 instance bridgeAdjDecidable (s : ℕ) : DecidableRel (bridgeGraph s).Adj := by
   intro v w
   cases v <;> cases w <;> simp only [bridgeGraph, bridgeAdj] <;> infer_instance
+/-- Symmetry of the forbidden graph's explicit adjacency relation. -/
+theorem forbiddenAdj_symmetric (i j : Fin 5) :
+    (i ≠ j ∧ ¬ (3 ≤ i.val ∧ 3 ≤ j.val)) →
+      (j ≠ i ∧ ¬ (3 ≤ j.val ∧ 3 ≤ i.val)) := by
+  simp [ne_comm, and_comm]
+/-- Irreflexivity of the forbidden graph's explicit adjacency relation. -/
+theorem forbiddenAdj_irreflexive (i : Fin 5) :
+    ¬ (i ≠ i ∧ ¬ (3 ≤ i.val ∧ 3 ≤ i.val)) := by
+  simp
 /-- The complete graph on five vertices with only the edge `{3,4}` removed. -/
 def forbiddenGraph : SimpleGraph (Fin 5) where
   Adj i j := i ≠ j ∧ ¬ (3 ≤ i.val ∧ 3 ≤ j.val)
-  symm := ⟨by intro i j; simp [ne_comm, and_comm]⟩
-  loopless := ⟨by intro i; simp⟩
+  symm := ⟨forbiddenAdj_symmetric⟩
+  loopless := ⟨forbiddenAdj_irreflexive⟩
 instance forbiddenAdjDecidable : DecidableRel forbiddenGraph.Adj := by
   intro i j
   dsimp [forbiddenGraph]
