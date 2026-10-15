@@ -10,11 +10,11 @@ Kumar and Pragada (Conjecture 1.16 of arXiv:2512.01409v2).
 The earlier mathematical presentation is the section "A connected color-critical
 counterexample" in the private manuscript
 [*Asymptotic rank two spectral bounds and a color critical counterexample*](https://chatgpt.com/space/page_53853a02ae28819196935cd71f513605),
-created on October 14, 2026 at 17:20 UTC, before the recorded Lean development.
-It gives the same proposition, graph argument, integer witnesses, compression,
-and rational gap. The source is not publicly accessible. This supports the
-`formalizes` relationship; the conjecture references supply context, and BN
-supplies reused Lean code. Neither supplies an earlier proof of this family.
+supplied as an informal proof source for this Lean development. It gives the
+same proposition, graph argument, integer witnesses, compression and rational
+gap. This private source cannot be independently confirmed from the repository.
+The `formalizes` relationship records that provenance account. The conjecture
+references supply context; BN supplies reused Lean code.
 No novelty or priority claim is made.
 
 | Role | Repository | Commit |

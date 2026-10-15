@@ -48,9 +48,10 @@ Editorial review and registration are separate gates.
 The KKP modules formalize the proposition in the section "A connected color-critical
 counterexample" of the private manuscript
 [*Asymptotic rank two spectral bounds and a color critical counterexample*](https://chatgpt.com/space/page_53853a02ae28819196935cd71f513605),
-created on October 14, 2026 before the Lean development. It contains the graph
-construction and exact two-vector compression proof. The manuscript is not
-publicly accessible. The five BN modules adapt spectral definitions and
+supplied as the informal source for the Lean development. It contains the graph
+argument and exact two-vector compression proof. This private source cannot be
+independently confirmed from the repository. The five BN modules adapt spectral
+definitions and
 variational lemmas from [Shengtong Zhang's BN development](https://github.com/ShengtongZhang-alt/BN/tree/5f4741254398424b730c9a893220a51e1cd829c5),
 with its Apache-2.0 notices retained. See [SOURCE_PROVENANCE.md](SOURCE_PROVENANCE.md)
 for the module boundaries and source and dependency revisions.
