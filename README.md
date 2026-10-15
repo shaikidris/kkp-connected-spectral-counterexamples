@@ -11,8 +11,10 @@ has `m=3s²+7` unordered edges, and satisfies
 \]
 
 The family has arbitrarily large edge counts, so it refutes the exact assertion
-in KKP Conjecture 1.16 and Li–Liu–Zhang Conjecture 5.4, including the connected
-convention. No novelty or priority claim is made.
+in [Kannan–Kumar–Pragada Conjecture 1.16](https://arxiv.org/html/2512.01409v2)
+and [Li–Liu–Zhang Conjecture 5.4](https://arxiv.org/html/2511.15431v3), including
+the connected convention. No novelty or priority claim is made. The bounded
+positive excess does not refute the asymptotic bound in Conjecture 1.17.
 
 The graph definitions in `Challenge.lean` show every adjacency rule. Its two
 selected declarations state the full family certificate and unbounded edge
@@ -21,7 +23,7 @@ quadratic forms, and the compression of the actual adjacency matrix. The
 compression bound follows from the kernel-checked rank-two variational theorem;
 no interlacing or graph-spectrum axiom is introduced. The selected eigenvalues
 are ordered algebraic eigenvalues, not absolute eigenvalues or the scalar
-certificate expression. Noncompleteness identifies their squared sum with the
+certificate expression. Noncompleteness identifies their sum of squares with the
 positive-spectrum statistic.
 
 Commands from this directory:
@@ -31,19 +33,20 @@ lake build
 lake comparator --config comparator.json
 ```
 
-The package uses Lean 4.35.0-rc3 and locked Mathlib
-`c55e6e786f49471c72fbddbec5415808896aec1e`. Its local development audit reports
-only `propext`, `Classical.choice`, and `Quot.sound`. The supported Comparator
-sandbox requires Linux. Commit-specific build, preparation, and independent-kernel
-verdicts are available in the GitHub Actions artifacts; a green wrapper alone is
-not proof evidence. The public source
-repository is <https://github.com/shaikidris/kkp-connected-spectral-counterexamples>.
-Its GitHub rehearsal runs the pinned Palomar preparation entry point and a
-sandboxed Linux Comparator with NanoDa and con-ron, followed by the pinned
-Challenge renderer. Full Palomar workflow and editorial/registration gates
-remain separate. The canonical Mathlib rc3 release shares the renderer's
-inherited dependency identities; no inherited revision is overridden.
+The package pins Lean 4.35.0-rc3 and Mathlib
+`c55e6e786f49471c72fbddbec5415808896aec1e`, including Mathlib's complete
+dependency closure. The supported Comparator sandbox requires Linux and permits
+only `propext`, `Classical.choice`, and `Quot.sound`.
 
-The informal source is the supplied research manuscript and exact certificate.
-The BN spectral support retains Shengtong Zhang's source notices and licence.
-See `SOURCE_PROVENANCE.md` for source and dependency roles.
+The [release rehearsal](.github/workflows/release-rehearsal.yml) runs the pinned
+full Palomar verifier, Comparator with NanoDa and con-ron, and the Challenge
+renderer, then checks the reports and rendered declarations in a browser.
+Commit-specific reports are preserved in the
+[GitHub Actions artifacts](https://github.com/shaikidris/kkp-connected-spectral-counterexamples/actions).
+Editorial review and registration are separate gates.
+
+The KKP modules implement the graph construction and exact two-vector
+compression certificate. The five BN modules adapt spectral definitions and
+variational lemmas from [Shengtong Zhang's BN development](https://github.com/ShengtongZhang-alt/BN/tree/5f4741254398424b730c9a893220a51e1cd829c5),
+with its Apache-2.0 notices retained. See [SOURCE_PROVENANCE.md](SOURCE_PROVENANCE.md)
+for the module boundaries and source and dependency revisions.
