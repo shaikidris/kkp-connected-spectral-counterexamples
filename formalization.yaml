@@ -18,11 +18,13 @@ sources:
     location: https://chatgpt.com/space/page_53853a02ae28819196935cd71f513605
     relationship: formalizes
     note: >-
-      Private research manuscript, created 2026-10-14 before the Lean development.
+      Private informal manuscript supplied as the mathematical source for this
+      formalization.
       The section "A connected color-critical counterexample" states and proves
       the same family for every s at least three, with the two integer witnesses
-      and exact positive rational gap. The manuscript is not publicly accessible;
-      no novelty or priority claim is made.
+      and exact positive rational gap. The source is not publicly accessible and
+      cannot be independently confirmed from this repository. No novelty or priority
+      claim is made.
   - title: Localization of spectral Turán-type theorems
     type: paper
     id: arXiv:2512.01409v2
