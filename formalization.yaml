@@ -5,7 +5,7 @@ project:
     For F=K5 minus one edge, a color-critical graph of chromatic number four,
     the graph formed from K(s,s,s) and K4 by one bridge is connected and F-free
     for every integer s at least three. It has 3s squared plus 7 edges, and
-    the squared sum of its two largest ordered adjacency eigenvalues exceeds
+    the sum of squares of its two largest ordered adjacency eigenvalues exceeds
     4m/3 by at least (656s squared-1366s+62)/(3(37s-1) squared)>0.
     The family has arbitrarily large edge counts, refuting the exact assertion
     in KKP Conjecture 1.16 and Li–Liu–Zhang Conjecture 5.4.
@@ -16,20 +16,25 @@ sources:
   - title: Connected bridge counterexample and two-vector compression certificate
     type: other
     relationship: formalizes
-    note: Supplied private research manuscript; exact proposition and certificate described in README.md.
+    note: >-
+      The construction joins K(s,s,s) and K4 by one bridge. The KKP modules
+      implement its graph proof and exact two-vector compression certificate;
+      README.md states the family, parameter range and quantitative bound.
   - title: Localization of spectral Turán-type theorems
     type: paper
     id: arXiv:2512.01409v2
     location: https://arxiv.org/html/2512.01409v2
+    authors: [M. Rajesh Kannan, Hitesh Kumar, Shivaramakrishna Pragada]
     relationship: background
     note: Conjecture 1.16 and the connectedness convention in Section 1.1.
   - title: Edge-spectral Turán theorems for color-critical graphs with applications
     type: paper
     id: arXiv:2511.15431v3
     location: https://arxiv.org/html/2511.15431v3
+    authors: [Yongtao Li, Hong Liu, Shengtong Zhang]
     relationship: background
     note: Conjecture 5.4.
-  - title: The Bollobás–Nikiforov inequality for nonnegative edge weights
+  - title: Spectral definitions and variational lemmas in BN
     type: other
     location: https://github.com/ShengtongZhang-alt/BN/tree/5f4741254398424b730c9a893220a51e1cd829c5
     relationship: adapts
@@ -37,7 +42,7 @@ sources:
       - name: Shengtong Zhang
         role: Author of the reused spectral definitions and variational Lean proof source.
     note: >-
-      The authoritative substantive source for the reused BN spectral components is
+      The authoritative substantive source for the five reused BN spectral modules is
       ShengtongZhang-alt/BN at 5f4741254398424b730c9a893220a51e1cd829c5.
       These source modules are ported to the selected toolchain with Apache-2.0 notices retained.
 classification:
@@ -53,13 +58,18 @@ automation:
     - method: agent
       models: [GPT-6 Codex]
       framework: Codex
-      tool_setup: Local Lean formalization, exact integer diagnostic replay, and axiom/dependency audits.
+      tool_setup: Lean proofs, exact integer-vector certificates, dependency and axiom audits, and release packaging.
   notes: >-
     AI-assisted proofs and packaging. Solution has no proof holes,
     native_decide, or custom axioms. Challenge has two deliberate Comparator holes.
 review:
-  status: Native Lean build and axiom audit; commit-specific mechanical evidence in GitHub Actions; human expert review not performed.
+  status: Mechanical proof verification and Challenge rendering rehearsed; human expert review not performed.
   reviewers: []
+  notes: >-
+    Full Palomar rehearsal and browser inspection passed at
+    66573dbd15f32d5091ecd43233831d8f789f0604 in GitHub Actions run 38696402311
+    (https://github.com/shaikidris/kkp-connected-spectral-counterexamples/actions/runs/38696402311).
+    This is verification evidence for that candidate, not a source revision or registry acceptance.
 fidelity:
   divergences: >-
     The compared statements are an explicit connected counterexample family
