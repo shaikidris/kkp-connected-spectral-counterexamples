@@ -13,13 +13,16 @@ project:
   responsible_maintainers: [Idris Ali Shaik]
   license: Apache-2.0
 sources:
-  - title: Connected bridge counterexample and two-vector compression certificate
+  - title: Asymptotic rank two spectral bounds and a color critical counterexample
     type: other
+    location: https://chatgpt.com/space/page_53853a02ae28819196935cd71f513605
     relationship: formalizes
     note: >-
-      The construction joins K(s,s,s) and K4 by one bridge. The KKP modules
-      implement its graph proof and exact two-vector compression certificate;
-      README.md states the family, parameter range and quantitative bound.
+      Private research manuscript, created 2026-10-14 before the Lean development.
+      The section "A connected color-critical counterexample" states and proves
+      the same family for every s at least three, with the two integer witnesses
+      and exact positive rational gap. The manuscript is not publicly accessible;
+      no novelty or priority claim is made.
   - title: Localization of spectral Turán-type theorems
     type: paper
     id: arXiv:2512.01409v2
@@ -34,17 +37,15 @@ sources:
     authors: [Yongtao Li, Hong Liu, Shengtong Zhang]
     relationship: background
     note: Conjecture 5.4.
-  - title: Spectral definitions and variational lemmas in BN
-    type: other
-    location: https://github.com/ShengtongZhang-alt/BN/tree/5f4741254398424b730c9a893220a51e1cd829c5
+related_formalizations:
+  - id: https://github.com/ShengtongZhang-alt/BN/tree/5f4741254398424b730c9a893220a51e1cd829c5
     relationship: adapts
-    contributors:
-      - name: Shengtong Zhang
-        role: Author of the reused spectral definitions and variational Lean proof source.
     note: >-
       The authoritative substantive source for the five reused BN spectral modules is
       ShengtongZhang-alt/BN at 5f4741254398424b730c9a893220a51e1cd829c5.
-      These source modules are ported to the selected toolchain with Apache-2.0 notices retained.
+      Shengtong Zhang's spectral definitions and variational Lean lemmas are ported
+      with their authorship, copyright and Apache-2.0 notices retained.
+      This is reused proof support, not an earlier presentation of the counterexample.
 classification:
   arxiv: [math.CO]
   msc2020: [05C50, 05C35]
@@ -63,13 +64,14 @@ automation:
     AI-assisted proofs and packaging. Solution has no proof holes,
     native_decide, or custom axioms. Challenge has two deliberate Comparator holes.
 review:
-  status: Mechanical proof verification and Challenge rendering rehearsed; human expert review not performed.
+  status: Mechanically verified; human expert review not performed.
   reviewers: []
   notes: >-
-    Full Palomar rehearsal and browser inspection passed at
-    66573dbd15f32d5091ecd43233831d8f789f0604 in GitHub Actions run 38696402311
-    (https://github.com/shaikidris/kkp-connected-spectral-counterexamples/actions/runs/38696402311).
-    This is verification evidence for that candidate, not a source revision or registry acceptance.
+    Official mechanical verification passed for
+    03eddd88ba6b43c03f4c8fc844f969988e62bc64 in run 38806182664
+    (https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/38806182664).
+    Commit-specific rehearsal and rendering reports are retained in GitHub Actions.
+    Mechanical checking is distinct from editorial clearance and registration.
 fidelity:
   divergences: >-
     The compared statements are an explicit connected counterexample family
