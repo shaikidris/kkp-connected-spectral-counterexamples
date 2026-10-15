@@ -99,7 +99,7 @@ jobs:
           assert set(verify_job["needs"]) == {"guard", "lockfile"}
           for field in ("repository", "commit", "pipeline_commit", "request_id", "options"):
               output = "pipeline" if field == "pipeline_commit" else field
-              assert verify_job["with"][field] == "${{ needs.guard.outputs." + output + " }}"
+              assert verify_job["with"][field] == "$" + "{{ needs.guard.outputs." + output + " }}"
           assert verify_job["with"]["mode"] == "full"
           options = json.dumps({"comparator_config_path": "comparator.json",
                                 "formalization_metadata_path": "formalization.yaml",
