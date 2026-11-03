@@ -1,8 +1,6 @@
-# Selected local package contract
+# Selected proof package contract
 
-Mode: EXTRACTION of the checked connected-counterexample proof cone from the
-research workspace. Public source publication and GitHub rehearsal are authorized;
-Palomar intake and registration are separate.
+Mode: EXTRACTION of the connected-counterexample proof cone.
 
 The selected declarations are `KKP.connected_counterexample_family` and
 `KKP.unbounded_connected_counterexamples`, with the exact signatures in
@@ -19,5 +17,4 @@ registry acceptance.
 
 Native builds and trust audits are distinct from Comparator, independent
 kernels, exact Palomar replay and rendering, editorial assessment, and review
-of a clean immutable submission commit. Those remain release gates. Git commits
-and SSH publication of this package are authorized.
+of a clean immutable submission commit. Those remain release gates.
