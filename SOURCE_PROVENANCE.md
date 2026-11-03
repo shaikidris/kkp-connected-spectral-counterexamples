@@ -7,18 +7,20 @@ adjacency-matrix compression. The mathematical target is the exact inequality
 of Li, Liu and Zhang (Conjecture 5.4 of arXiv:2511.15431v3), restated by Kannan,
 Kumar and Pragada (Conjecture 1.16 of arXiv:2512.01409v2).
 
-The earlier mathematical presentation is the section "A connected color-critical
-counterexample" in the private manuscript
-[*Asymptotic rank two spectral bounds and a color critical counterexample*](https://chatgpt.com/space/page_53853a02ae28819196935cd71f513605),
-supplied as an informal proof source for this Lean development. It gives the
-same proposition, graph argument, integer witnesses, compression and rational
-gap. This private source cannot be independently confirmed from the repository.
-The `formalizes` relationship records that provenance account. The conjecture
-references supply context; BN supplies reused Lean code.
-No novelty or priority claim is made.
+The Lean development used the informal manuscript
+*Asymptotic rank two spectral bounds and a color critical counterexample*, section
+"A connected color-critical counterexample", as its mathematical source.
+The public account of the same construction and certificate is Idris Ali Shaik,
+[*Three conjectures on the first two graph eigenvalues*](https://hexagonmath.org/2610.00305v1),
+v1 (17 October 2026), Theorem 1.2 and Section 4. Section 8 identifies
+`KKP.connected_counterexample_family` and `KKP.unbounded_connected_counterexamples`.
+The public citation supplies an accessible exposition while retaining the informal
+proof lineage. The conjecture references provide context; BN supplies reused Lean
+code. No novelty or priority claim is made.
 
 | Role | Repository | Commit |
 |---|---|---|
+| Registered v1 proof snapshot ([PALOMAR-2026-10-16-000012 v1](https://palomar-registry.org/entry?id=PALOMAR-2026-10-16-000012&version=1)) | [Palomar archive](https://github.com/PalomarArchive/shaikidris--kkp-connected-spectral-counterexamples--a1b9d82c88cb/tree/c611a4a733fe796809cd941f96ff8f2c294fd1ef) | `c611a4a733fe796809cd941f96ff8f2c294fd1ef` |
 | Reused spectral proof source by Shengtong Zhang | ShengtongZhang-alt/BN | 5f4741254398424b730c9a893220a51e1cd829c5 |
 | Mathlib dependency of this package | leanprover-community/mathlib4 | c55e6e786f49471c72fbddbec5415808896aec1e |
 | Mechanically verified candidate (official run 38806182664) | shaikidris/kkp-connected-spectral-counterexamples | 03eddd88ba6b43c03f4c8fc844f969988e62bc64 |

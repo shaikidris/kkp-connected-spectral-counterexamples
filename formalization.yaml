@@ -13,18 +13,21 @@ project:
   responsible_maintainers: [Idris Ali Shaik]
   license: Apache-2.0
 sources:
-  - title: Asymptotic rank two spectral bounds and a color critical counterexample
-    type: other
-    location: https://chatgpt.com/space/page_53853a02ae28819196935cd71f513605
+  - title: Three conjectures on the first two graph eigenvalues
+    type: paper
+    id: hexagon:2610.00305v1
+    location: https://hexagonmath.org/2610.00305v1
+    authors: [Idris Ali Shaik]
     relationship: formalizes
     note: >-
-      Private informal manuscript supplied as the mathematical source for this
-      formalization.
-      The section "A connected color-critical counterexample" states and proves
-      the same family for every s at least three, with the two integer witnesses
-      and exact positive rational gap. The source is not publicly accessible and
-      cannot be independently confirmed from this repository. No novelty or priority
-      claim is made.
+      Theorem 1.2 and Section 4 present the connected tripartite-bridge-K4 family
+      and exact two-vector certificate, with arbitrarily large edge counts.
+      Section 8 identifies KKP.connected_counterexample_family and
+      KKP.unbounded_connected_counterexamples. The Lean development used the
+      informal manuscript Asymptotic rank two spectral bounds and a color critical
+      counterexample, section "A connected color-critical counterexample".
+      The cited public v1 was deposited on 17 October 2026 and supplies the
+      accessible mathematical account of that informal proof source.
   - title: Localization of spectral Turán-type theorems
     type: paper
     id: arXiv:2512.01409v2

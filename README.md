@@ -45,12 +45,17 @@ Commit-specific reports are preserved in the
 [GitHub Actions artifacts](https://github.com/shaikidris/kkp-connected-spectral-counterexamples/actions).
 Editorial review and registration are separate gates.
 
-The KKP modules formalize the proposition in the section "A connected color-critical
-counterexample" of the private manuscript
-[*Asymptotic rank two spectral bounds and a color critical counterexample*](https://chatgpt.com/space/page_53853a02ae28819196935cd71f513605),
-supplied as the informal source for the Lean development. It contains the graph
-argument and exact two-vector compression proof. This private source cannot be
-independently confirmed from the repository. The five BN modules adapt spectral
+The connected family and exact certificate are presented in Idris Ali Shaik,
+[*Three conjectures on the first two graph eigenvalues*](https://hexagonmath.org/2610.00305v1),
+v1, Theorem 1.2 and Section 4. Section 8 identifies the selected Lean declarations
+`KKP.connected_counterexample_family` and `KKP.unbounded_connected_counterexamples`.
+
+[PALOMAR-2026-10-16-000012 v1](https://palomar-registry.org/entry?id=PALOMAR-2026-10-16-000012&version=1)
+registers the proof snapshot at `c611a4a733fe796809cd941f96ff8f2c294fd1ef`, preserved
+in the [Palomar archive](https://github.com/PalomarArchive/shaikidris--kkp-connected-spectral-counterexamples--a1b9d82c88cb/tree/c611a4a733fe796809cd941f96ff8f2c294fd1ef).
+The paper is CC BY 4.0; this repository's code is Apache-2.0.
+
+The five BN modules adapt spectral
 definitions and
 variational lemmas from [Shengtong Zhang's BN development](https://github.com/ShengtongZhang-alt/BN/tree/5f4741254398424b730c9a893220a51e1cd829c5),
 with its Apache-2.0 notices retained. See [SOURCE_PROVENANCE.md](SOURCE_PROVENANCE.md)
